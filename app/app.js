@@ -12,8 +12,16 @@ $(document).ready(function () {
 	//loadLocalStorage();
 
 	$('#btn-create').on('click', function(e) {
-		console.log($('#key').val(), $('#value').val());
-		updateStatusLabel('you clicked create');
+		var key = $('#key').val();
+		var value = $('#value').val();
+		var keyExists = !!localStorage.getItem(key);
+		updateStatusLabel('you clicked create -- ' + keyExists);
+
+		if (keyExists) {
+			updateStatusLabel('key already exists, please use update button instead! :D');
+		} else {
+			createEntry(key, value);
+		}
 	});
 
 });
