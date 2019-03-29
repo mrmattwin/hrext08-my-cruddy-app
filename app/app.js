@@ -1,4 +1,10 @@
 var loadLocalStorage = function () {
+	var keys = Object.keys(localStorage)
+	var htmlString = '';
+	for (var i = 0; i < keys.length; i++) {
+		htmlString += `<tr><td>${keys[i]}</td><td>${localStorage[keys[i]]}</tr></tr>`;
+	}
+	$('tbody').html(htmlString)
 };
 
 var updateStatusLabel = function(message) {
@@ -9,45 +15,60 @@ var updateStatusLabel = function(message) {
  ////button and form event handlers
  // logic for determining action probably needs to go in the event handler
 $(document).ready(function () {
-	//loadLocalStorage();
+	loadLocalStorage();
 
 	$('#btn-create').on('click', function(e) {
 		var key = $('#key').val();
 		var value = $('#value').val();
-		var keyExists = !!localStorage.getItem(key);
+		var keyExists = localStorage.getItem(key) !== null;
 
 		if (keyExists) {
 			updateStatusLabel('key already exists, please use update button instead! :D');
-		} else {
+		} else if (key === '') {
+			updateStatusLabel('invalid input!')
+		}else {
 			createEntry(key, value);
 			updateStatusLabel('key created - ' + key);
 		}
+
+		loadLocalStorage();
 	});
 
 	$('#btn-update').on('click', function(e) {
 		var key = $('#key').val();
 		var value = $('#value').val();
-		var keyExists = !!localStorage.getItem(key);
+		var existingValue = localStorage.getItem(key)
+		var keyExists = existingValue !== null;
 
-		if (keyExists) {
+		if (value === existingValue) {
+			updateStatusLabel('key not updated - that value already exists silly! xD')
+		} else if (keyExists) {
 			updateEntry(key, value);
 			updateStatusLabel('key updated - ' + key);
+		} else if (key === '') {
+			updateStatusLabel('invalid input!')
 		} else {
 			updateStatusLabel('key doesn\'t exist, please use create button instead! :D');
 		}		
+		
+		loadLocalStorage();		
 	});
 
 	$('#btn-delete').on('click', function(e) {
 		var key = $('#key').val();
 		var value = $('#value').val();
-		var keyExists = !!localStorage.getItem(key);
+		var keyExists = localStorage.getItem(key) !== null;
 
 		if (keyExists) {
 			removeEntry(key);
 			updateStatusLabel('key removed - ' + key);
+		} else if (key === '') {
+			updateStatusLabel('invalid input!')
 		} else {
 			updateStatusLabel('key doesn\'t exist, nothing removed. :|');
-		}		
+		}
+
+		loadLocalStorage();
 	});	
 
 });
