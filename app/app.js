@@ -1,6 +1,22 @@
+var loadLocalStorage = function () {
+};
+
+var updateStatusLabel = function(message) {
+	$('#statusLabel').text('Status: ' + message);
+}
+
  //jQuery document ready initialization stuff
  ////button and form event handlers
  // logic for determining action probably needs to go in the event handler
+$(document).ready(function () {
+	//loadLocalStorage();
+
+	$('#btn-create').on('click', function(e) {
+		console.log($('#key').val(), $('#value').val());
+		updateStatusLabel('you clicked create');
+	});
+
+});
 /*
 
 
@@ -11,6 +27,11 @@ let form = document.querySelector("form");
 let guestName = form.elements.guest;
 let hatSize = form.elements["hat-size"];
 */
+
+/*
+PAGE CONTENT STUFF
+*/
+//something to update the table every time localStorage changes
 
 //localStorage stuff
 //https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
