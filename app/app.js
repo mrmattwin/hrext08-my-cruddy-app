@@ -15,14 +15,40 @@ $(document).ready(function () {
 		var key = $('#key').val();
 		var value = $('#value').val();
 		var keyExists = !!localStorage.getItem(key);
-		updateStatusLabel('you clicked create -- ' + keyExists);
 
 		if (keyExists) {
 			updateStatusLabel('key already exists, please use update button instead! :D');
 		} else {
 			createEntry(key, value);
+			updateStatusLabel('key created - ' + key);
 		}
 	});
+
+	$('#btn-update').on('click', function(e) {
+		var key = $('#key').val();
+		var value = $('#value').val();
+		var keyExists = !!localStorage.getItem(key);
+
+		if (keyExists) {
+			updateEntry(key, value);
+			updateStatusLabel('key updated - ' + key);
+		} else {
+			updateStatusLabel('key doesn\'t exist, please use create button instead! :D');
+		}		
+	});
+
+	$('#btn-delete').on('click', function(e) {
+		var key = $('#key').val();
+		var value = $('#value').val();
+		var keyExists = !!localStorage.getItem(key);
+
+		if (keyExists) {
+			removeEntry(key);
+			updateStatusLabel('key removed - ' + key);
+		} else {
+			updateStatusLabel('key doesn\'t exist, nothing removed. :|');
+		}		
+	});	
 
 });
 /*
