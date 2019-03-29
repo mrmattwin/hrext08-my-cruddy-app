@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>HREXT08 R00lz!</title>
-  <script
-          src="https://code.jquery.com/jquery-3.3.1.js"
-          integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-          crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
-
+	<meta charset="UTF-8">
+	<title>HREXT08 R00lz!</title>
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.js"
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-  <p>Hello World</p>
+	<div class="container">
+		<form action="" method="" class="form">
+			<div class="form">
+				<label for="key">Enter key: </label>
+				<input type="text" name="key" id="key" required>
+			</div>
+			<div class="form">
+				<label for="value">Enter value: </label>
+				<input type="text" name="value" id="value" required>
+			</div>
+			<div class="form">
+				<input type="submit" value="Create!">
+			</div>
+		</form>	
+		<table>
+			<thead>
+				<tr>
+					<th>Key</th>
+					<th>Value</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>test key</td>
+					<td>test value</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<script src="app/app.js"></script>
   <!--
    table to view data
 
@@ -19,5 +49,6 @@
 
    corgi gif
   -->
+
 </body>
 </html>

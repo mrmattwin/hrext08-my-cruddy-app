@@ -8,3 +8,46 @@ a form that doenst look like its from a circa 2001 webpage
 advanced content
 state changing styling
 */
+
+/*
+	FLEXBOX CONTAINER
+	guide: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+*/
+.container {
+	display: flex;
+}
+
+/*
+	TABLE STYLING 
+*/
+table,
+td {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+/*
+	FORM STYLING 
+	TODO: validation checking styling 
+*/
+form.form {
+    display: table;
+}
+
+div.form {
+    display: table-row;
+}
+
+label, input {
+    display: table-cell;
+    margin-bottom: 10px;
+}
+
+label {
+    padding-right: 10px;
+}
