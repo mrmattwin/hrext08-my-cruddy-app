@@ -1,0 +1,14 @@
+Things to do:
+need to create an array that that pie chart can pull data from
+need create an error message when the value is not a number
+need to create a total budget text box
+remove all text when button is clicked
+then need to create an alert saying how much under budget and overbudget you are
+set a warning to say a budget has not been set
+Change status to not always say status?
+
+
+make sure the text alerts are correct
+format the status text
+format the buttons
+

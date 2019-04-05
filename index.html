@@ -2,33 +2,48 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>HREXT08 R00lz!</title>
+	<title>Need more monies!</title>
 	<script
 		src="https://code.jquery.com/jquery-3.3.1.js"
 		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 		crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.21/c3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.21/c3.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel='icon' href='./images/favicon.png' type='image/png'/ >
+
 </head>
-<body>
-	<div class="container">
+<body background="./images/background.jpg">
+	<div id="chart"></div>
+	
+	<div class="submitContainer">
+		 <!-- <h2>Customize budget</h2> -->
+		 <div id="statusBudget">&nbsp;</div>
 		<form action="" method="" class="form">
 			<div class="form">
-				<label for="key">Enter key: </label>
-				<input type="text" name="key" id="key" required>
+				<!-- <label for="totalBudget">Set Total Budget: </label> -->
+				<input type="text" class="inputFields" name="totalBudget" id="totalBudget" placeholder="Total Budget" required>
 			</div>
 			<div class="form">
-				<label for="value">Enter value: </label>
-				<input type="text" name="value" id="value" required>
+				<!-- <label for="key">Enter Expense: </label> -->
+				<input type="text" class="inputFields" name="key" id="key" placeholder="Expense Name" required>
 			</div>
 			<div class="form">
-				<button class="button" id="btn-create" type="button">Create</button>
-				<button class="button" id="btn-update" type="button">Update</button>
-				<button class="button" id="btn-delete" type="button">Delete</button>
+				<!-- <label for="value">Enter Amount: </label> -->
+				<input type="text" class="inputFields" name="value" id="value" placeholder="Expense Amount" required>
+			</div>
+			<div class="theButtons form">
+				<button class="button btn-light" id="btn-budget" type="button">Set Budget</button>
+				<button class="button btn-light" id="btn-create" type="button">Add Expense</button>
+				<button class="button btn-light" id="btn-update" type="button">Update Expense</button>
+				<button class="button btn-light" id="btn-delete" type="button">Delete Expense</button>
 			</div>
 			<!-- clear button? -->
 		</form>	
-		<table>
+	<!-- 	<table class="tableDisplay">
 			<thead>
 				<tr>
 					<th>Key</th>
@@ -41,11 +56,17 @@
 					<td>test value</td>
 				</tr>
 			</tbody>
-		</table>
+		</table> -->
+		<div id="statusLabel">&nbsp;&nbsp;</div>	
+		
 	</div>
-	<div id="statusLabel">Status:</div>
+	
+
 
 	<script src="app/app.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
   <!--
    table to view data
 

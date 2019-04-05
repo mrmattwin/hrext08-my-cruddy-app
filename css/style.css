@@ -13,15 +13,45 @@ state changing styling
 	FLEXBOX CONTAINER
 	guide: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 */
-.container {
-	display: flex;
+body {
+    background-size: cover;                      
+    background-repeat: no-repeat;
+    background-position: center center;  
+}
+input {
+    text-align: center;
+}
+
+.inputFields {
+	margin: 1px;
+}
+
+
+.submitContainer {
+	/*display: flex;*/
+	font-size: 12px;
+	text-align: center;
+	font-family: Arial;
+	width: 350px;
+	padding: 20px;
+	background: #FFFFFF;
+	margin: 40px auto;
+	margin-top: 20px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+	border-radius: 10px;
+}
+
+h2 {
+	margin: 15px;
 }
 
 /*
 	TABLE STYLING 
 */
-table {
-	width: 400px;
+.tableDisplay {
+	width: 300px;
 	margin-left: 30px;
 }
 
@@ -48,16 +78,57 @@ div.form {
 
 label, input {
     margin-bottom: 10px;
-    width: 125px;
+    width: 150px;
 }
 
 label {
 	display: inline-block;
     padding-right: 10px;
-    width: 80px;
+    width: 115px;
 
 }
 
 button.button {
-	margin-right: 20px;
+	/*margin-right: 20px;*/
 }
+
+#chart {
+	margin-bottom: 10px;
+}
+
+#statusLabel {
+	/*margin-top:5px;*/
+	font-size: 13px;
+}
+
+#statusBudget {
+	text-align: center;	
+	font-size: 13px;
+	margin-bottom: 5px;
+	/*font-family: Arial;*/
+}
+
+.theButtons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	flex-direction: column;
+	margin-top: 10px;
+	padding: 10px;
+	padding-bottom: 5px;
+}
+
+.btn-light {
+	margin: 2px;
+	width: 150px;
+/*	background-color: #e0e5e5;
+	border-color: #e0e5e5;*/
+	border-radius: 3px;
+}
+
+button.button {
+	background-color: #edf2f2;
+	border-color: #edf2f2;
+}
+
